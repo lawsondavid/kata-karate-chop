@@ -2,6 +2,8 @@ class KarateChop
   def chop(int, array_of_ints)
     return inner_chop(0, int, array_of_ints)
   end
+
+  private
   
   def inner_chop(offset, int, array_of_ints)
     return -1 if(array_of_ints.empty?)
