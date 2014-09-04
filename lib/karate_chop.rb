@@ -1,21 +1,19 @@
 class KarateChop 
+
   def chop(int, array_of_ints)
-    return inner_chop(0, int, array_of_ints)
+    return -1 if array_of_ints.empty?
+    lower, upper = 0, array_of_ints.size - 1
+    while (lower <=  upper)
+      mid = upper + lower / 2
+      if(int > array_of_ints[mid])
+        lower = mid + 1
+      elsif (int < array_of_ints[mid])
+        upper = mid - 1
+      else
+        return mid
+      end
+    end
+    return -1
   end
 
-  private
-  
-  def inner_chop(offset, int, array_of_ints)
-    return -1 if(array_of_ints.empty?)
-    ints_size = array_of_ints.size
-    half_way_index = ints_size/2
-
-    if(array_of_ints[half_way_index] == int)
-	    return half_way_index + offset
-    elsif(int < array_of_ints[half_way_index])
-      return inner_chop(offset, int, array_of_ints[0, half_way_index])
-    else
-      return inner_chop(offset + half_way_index + 1, int, array_of_ints[half_way_index + 1, ints_size])	
-    end  
-  end 
 end

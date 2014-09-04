@@ -5,10 +5,11 @@ class TestKarateChop < Test::Unit::TestCase
   
   def test_karate_chop
     karate = KarateChop.new
+    assert_equal(1,  karate.chop(2, [1,2,3]))
 	assert_equal(-1,  karate.chop(3, []))
 	assert_equal(-1,  karate.chop(3, [1]))
 	assert_equal(0,   karate.chop(1, [1]))
-    #
+    #  
     assert_equal(0,  karate.chop(1, [1, 3, 5]))
     assert_equal(1,  karate.chop(3, [1, 3, 5]))
     assert_equal(2,  karate.chop(5, [1, 3, 5]))
@@ -16,7 +17,7 @@ class TestKarateChop < Test::Unit::TestCase
     assert_equal(-1, karate.chop(2, [1, 3, 5]))
     assert_equal(-1, karate.chop(4, [1, 3, 5]))
     assert_equal(-1, karate.chop(6, [1, 3, 5]))
-    # #
+    #
     assert_equal(0,  karate.chop(1, [1, 3, 5, 7]))
     assert_equal(1,  karate.chop(3, [1, 3, 5, 7]))
     assert_equal(2,  karate.chop(5, [1, 3, 5, 7]))
