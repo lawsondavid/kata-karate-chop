@@ -10,7 +10,7 @@ class KarateChop
     ints_size = array_of_ints.size
     half_way_index = ints_size/2
 
-    if(array_of_ints[half_way_index] == int
+    if(array_of_ints[half_way_index] == int)
       return half_way_index + offset
     elsif(int < array_of_ints[half_way_index])
       return inner_chop(offset, int, array_of_ints[0, half_way_index])
